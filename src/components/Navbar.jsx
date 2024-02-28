@@ -1,10 +1,10 @@
 import React from "react";
-import logo from "../images/site-logo.png";
 import { IoLocation } from "react-icons/io5";
 
 import { Link } from "react-router-dom";
 import Languages from "./languages";
 import Button from "./Button";
+import { logo } from "../images";
 
 const Navbar = () => {
   return (
