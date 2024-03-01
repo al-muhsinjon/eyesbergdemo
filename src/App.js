@@ -2,7 +2,8 @@ import { IoSearchOutline } from "react-icons/io5";
 import Button from "./components/Button";
 import Navbar from "./components/Navbar";
 import { FaChevronRight } from "react-icons/fa6";
-import { icon1 } from "./images";
+import { icon1, icon2 } from "./images";
+import ServiceCard from "./components/ServiceCard";
 
 export default function App() {
   const obj = [
@@ -28,14 +29,22 @@ export default function App() {
 
   const datas = [
     {
-      id: 0,
-      src: "",
+      id: "iqwidjeuf",
+      src: icon1,
+      text: "Tozalash va sanitariya",
+      desc: "Balandlikda ishlash, Hududni tozalash",
+    },
+    {
+      id: "djwudhwud",
+      src: icon2,
+      text: "Bayramlar va tadbirlar",
+      desc: "Cafe & Restaurant uchun ofitsiantlar ",
     },
   ];
   return (
     <>
       <Navbar />
-      <main className="px-[7%]">
+      <main className="px-[7%] h-screen">
         <div className="w-1/2 h-[80vh] flex flex-col py-24 justify-around p-4">
           <h1 className="text-6xl font-bold">
             <span className="text-blue">Toshkent</span> dagi eng yaxshi
@@ -60,7 +69,7 @@ export default function App() {
           </div>
         </div>
       </main>
-      <div className="px-[7%]  grid grid-cols-4 gap-6 ">
+      <div className="px-[7%] my-12  grid grid-cols-4 gap-6 ">
         <div className="px-4 py-6 ">
           <h2 className="font-bold text-3xl">
             Toshkentda eyesberg.uz da qanday mutaxassis topsa boladi?
@@ -85,13 +94,30 @@ export default function App() {
           </div>
         ))}
       </div>
-      <div className="px-[7%]">
+      <div className="px-[7%] my-12">
         <h2 className="text-3xl font-bold">
           Toshkent da toifalar bo'yicha xizmatlar
         </h2>
-        <div className="grid grid-cols-3"></div>
+        <div className="grid grid-cols-3 gap-12  h-80 mt-12 ">
+          {datas.map((data) => (
+            <ServiceCard key={data.id} data={data} />
+          ))}
+          <div className="bg-[#D6EAFF] rounded-xl p-6 flex justify-around text-blue font-bold flex-col">
+            <h2 className="text-3xl">
+              Qolgan Toifalar yaqin orada qo'shiladi...
+            </h2>
+            <Button>Buyurtma yarating</Button>
+          </div>
+        </div>
       </div>
-      <div></div>
+      <div className="flex h-screen px-[7%]">
+        <div className="w-1/2 bg-yellow-400 grid grid-cols-2">
+          <div>
+
+          </div>
+        </div>
+        <div className="w-1/2  bg-yellow-200"></div>
+      </div>
     </>
   );
 }

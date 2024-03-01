@@ -8,7 +8,7 @@ import { logo } from "../images";
 
 const Navbar = () => {
   return (
-    <header className="flex justify-between px-[7%] items-center h-20 text-xl font-bold">
+    <header className="flex  justify-between px-[7%] items-center h-20 text-xl font-bold">
       <div className="flex  gap-8">
         <Link to="/">
           <img src={logo} className=" w-[197px] h-[42px]" alt="logo" />
