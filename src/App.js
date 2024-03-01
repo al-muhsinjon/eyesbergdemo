@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import { FaChevronRight } from "react-icons/fa6";
 import { icon1, icon2 } from "./images";
 import ServiceCard from "./components/ServiceCard";
+import { Link } from "react-router-dom";
 
 export default function App() {
   const obj = [
@@ -77,12 +78,12 @@ export default function App() {
           <p className="text-gray py-4">
             5 daqiqada eng yaxshi mutaxassisni toping!
           </p>
-          <a href="#" className="flex text-gray items-center gap-4 ">
+          <Link to="/" className="flex text-gray items-center gap-4 ">
             <button className="w-12 h-12 rounded-full border-2 border-gray-400 flex justify-center items-center">
               <FaChevronRight />
             </button>
             <p>Promo videoni tomosha qiling</p>
-          </a>
+          </Link>
         </div>
         {obj.map((item) => (
           <div className="bg-white px-6 py-6" key={item.id}>
@@ -110,7 +111,7 @@ export default function App() {
           </div>
         </div>
       </div>
-      <div className="flex h-screen px-[7%]">
+      <div className="flex h-[50vh] px-[7%]">
         <div className="w-1/2 bg-yellow-400 grid grid-cols-2">
           <div>
 
