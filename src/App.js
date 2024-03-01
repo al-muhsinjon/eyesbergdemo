@@ -42,20 +42,40 @@ export default function App() {
       desc: "Cafe & Restaurant uchun ofitsiantlar ",
     },
   ];
+  const data2 = [
+    {
+      id: 0,
+      numeric: "0%",
+      title: "Komissiya",
+      text: "buyurtmalardan komissiya olmaydi, mutaxassislar faqat kerakli toifalarga kirish uchun 700 ming so'm to'laydilar.",
+    },
+    {
+      id: 1,
+      numeric: "0 so'm",
+      title: "saytimizda reklama",
+      text: "Profilingizdan siz uchun eng yaxshi reklama bo'lib xizmat qiladigan mijozlar sharhlari bilan shaxsiy veb-sayt sifatida foydalaning",
+    },
+    {
+      id: 2,
+      numeric: "8 mlndan",
+      title: "Daromad",
+      text: "Obro' uchun ishlash pul olib kelishini tushungan mutaxassislar allaqachon 8 mln so'mdam daromadga erishgan.",
+    },
+  ];
   return (
     <>
       <Navbar />
       <main className="px-[7%] h-screen">
-        <div className="w-1/2 h-[80vh] flex flex-col py-24 justify-around p-4">
-          <h1 className="text-6xl font-bold">
-            <span className="text-blue">Toshkent</span> dagi eng yaxshi
+        <div className="md:w-1/2  h-[80vh] flex flex-col py-24 justify-around p-4">
+          <h1 className="md:text-6xl w-[70%] text-3xl font-bold">
+            <span className="text-blue">Toshkent</span>dagi eng yaxshi
             mutaxassislar
           </h1>
-          <div className="relative h-14 flex mt-6 bg-white rounded-xl justify-between w-full">
-            <IoSearchOutline className="absolute left-2 top-[30%]  text-2xl" />
+          <div className="relative h-auto md:h-14 md:flex mt-6 md:bg-white rounded-xl justify-between w-full">
+            <IoSearchOutline className="absolute left-2 md:top-[30%] top-4  text-2xl" />
             <input
               type="text"
-              className="bg-transparent border-none w-[65%] outline-none indent-8"
+              className="md:bg-transparent md:border-none mb-4 h-14 bg-white w-full rounded-xl md:w-[65%] outline-none indent-8"
               placeholder="Mutaxasislarni qidirish"
             />
             <Button>Arizani Qoldirish</Button>
@@ -70,7 +90,7 @@ export default function App() {
           </div>
         </div>
       </main>
-      <div className="px-[7%] my-12  grid grid-cols-4 gap-6 ">
+      <div className="px-[7%] my-12  grid md:grid-cols-4 gap-6 ">
         <div className="px-4 py-6 ">
           <h2 className="font-bold text-3xl">
             Toshkentda eyesberg.uz da qanday mutaxassis topsa boladi?
@@ -99,7 +119,7 @@ export default function App() {
         <h2 className="text-3xl font-bold">
           Toshkent da toifalar bo'yicha xizmatlar
         </h2>
-        <div className="grid grid-cols-3 gap-12  h-80 mt-12 ">
+        <div className="grid md:grid-cols-3 gap-12 md:h-80 mt-12 ">
           {datas.map((data) => (
             <ServiceCard key={data.id} data={data} />
           ))}
@@ -111,13 +131,24 @@ export default function App() {
           </div>
         </div>
       </div>
-      <div className="flex h-[50vh] px-[7%]">
-        <div className="w-1/2 bg-yellow-400 grid grid-cols-2">
-          <div>
-
-          </div>
+      <div className="md:flex my-12 px-[7%]">
+        <div className="md:w-1/2  grid md:grid-cols-2 gap-6 gap-y-12">
+          {data2.map((item) => (
+            <div
+              className="text-center px-8 py-6 min-h-[350px] flex flex-col justify-around bg-white"
+              key={item.id}
+            >
+              <h2 className="font-bold text-3xl">
+                <b className="block text-blue">{item.numeric}</b>
+                {item.title}
+              </h2>
+              <p className="capitalize font-semibold text-gray my-10  ">
+                {item.text}
+              </p>
+            </div>
+          ))}
         </div>
-        <div className="w-1/2  bg-yellow-200"></div>
+        <div className="w-1/2 m-4 "></div>
       </div>
     </>
   );
