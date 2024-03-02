@@ -5,6 +5,8 @@ import { FaChevronRight } from "react-icons/fa6";
 import { icon1, icon2 } from "./images";
 import ServiceCard from "./components/ServiceCard";
 import { Link } from "react-router-dom";
+import Active from "./components/Active";
+import About from "./sections/About";
 
 export default function App() {
   const obj = [
@@ -42,26 +44,10 @@ export default function App() {
       desc: "Cafe & Restaurant uchun ofitsiantlar ",
     },
   ];
-  const data2 = [
-    {
-      id: 0,
-      numeric: "0%",
-      title: "Komissiya",
-      text: "buyurtmalardan komissiya olmaydi, mutaxassislar faqat kerakli toifalarga kirish uchun 700 ming so'm to'laydilar.",
-    },
-    {
-      id: 1,
-      numeric: "0 so'm",
-      title: "saytimizda reklama",
-      text: "Profilingizdan siz uchun eng yaxshi reklama bo'lib xizmat qiladigan mijozlar sharhlari bilan shaxsiy veb-sayt sifatida foydalaning",
-    },
-    {
-      id: 2,
-      numeric: "8 mlndan",
-      title: "Daromad",
-      text: "Obro' uchun ishlash pul olib kelishini tushungan mutaxassislar allaqachon 8 mln so'mdam daromadga erishgan.",
-    },
-  ];
+  
+
+  window.document.title = "Salom";
+
   return (
     <>
       <Navbar />
@@ -131,25 +117,7 @@ export default function App() {
           </div>
         </div>
       </div>
-      <div className="md:flex my-12 px-[7%]">
-        <div className="md:w-1/2  grid md:grid-cols-2 gap-6 gap-y-12">
-          {data2.map((item) => (
-            <div
-              className="text-center px-8 py-6 min-h-[350px] flex flex-col justify-around bg-white"
-              key={item.id}
-            >
-              <h2 className="font-bold text-3xl">
-                <b className="block text-blue">{item.numeric}</b>
-                {item.title}
-              </h2>
-              <p className="capitalize font-semibold text-gray my-10  ">
-                {item.text}
-              </p>
-            </div>
-          ))}
-        </div>
-        <div className="w-1/2 m-4 "></div>
-      </div>
+      <About />
     </>
   );
 }
