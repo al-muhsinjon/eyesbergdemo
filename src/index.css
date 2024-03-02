@@ -3,5 +3,9 @@
 @tailwind utilities;
 
 body {
-  background: #F5F5F5;
+  background: #f5f5f5;
+}
+.bg-special {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.418)),
+    url("./images/specialist.png") no-repeat center/cover;
 }
