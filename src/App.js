@@ -5,7 +5,6 @@ import { FaChevronRight } from "react-icons/fa6";
 import { icon1, icon2 } from "./images";
 import ServiceCard from "./components/ServiceCard";
 import { Link } from "react-router-dom";
-import Active from "./components/Active";
 import About from "./sections/About";
 
 export default function App() {
@@ -44,7 +43,6 @@ export default function App() {
       desc: "Cafe & Restaurant uchun ofitsiantlar ",
     },
   ];
-  
 
   window.document.title = "Salom";
 
